@@ -27,7 +27,7 @@
 %% ------------------------------------------------
 %% Início da personalização para a USP
 %% ------------------------------------------------
-
+\usepackage[font=footnotesize, margin=1cm]{caption}
 \ProvidesPackage{abntex2eachusp}[2016/03/05 Criacao desta customizacao do abnTeX2]
 
 % -----
@@ -174,6 +174,10 @@
     \prebibhook
 }
 
+
+\renewcommand{\postextual}{%
+	\setcounter{footnote}{0}
+}
 %% ------------------------------------------------
 %% Fim da personalização para a EACH/USP
 %% ------------------------------------------------
