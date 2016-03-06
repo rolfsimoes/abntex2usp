@@ -1,5 +1,5 @@
 %%
-%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a 
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a
 %%  Universidade de Sao Paulo (USP) de acordo com o Guia para ABNT em
 %%  http://www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67&lang=en
 %%
@@ -12,7 +12,7 @@
 %% version 2005/12/01 or later.
 %%
 %% This work has the LPPL maintenance status `maintained'.
-%% 
+%%
 %% The Current Maintainers of this work are Rolf Simoes, rolfsimoes{at}gmail.com;
 %%    and Sandro Sousa, sandrofsousa{at}gmail.com
 %%
@@ -27,8 +27,13 @@
 %% ------------------------------------------------
 %% Início da personalização para a USP
 %% ------------------------------------------------
+
+\ProvidesPackage{abntex2usp}[2016/03/05 Criacao desta customizacao do abnTeX2]
+
+% -----
+% Formata fonte das legendas para 10pt
+% -----
 \usepackage[font=footnotesize, margin=1cm]{caption}
-\ProvidesPackage{abntex2eachusp}[2016/03/05 Criacao desta customizacao do abnTeX2]
 
 % -----
 % Adiciona páginas em que a referência foi citada
@@ -62,7 +67,7 @@
 
 
 % -----
-% Personaliza declaracoes de cabecalhos 
+% Personaliza declaracoes de cabecalhos
 % -----
 % Cabeçalho padrão
 \makepagestyle{abntheadings}
@@ -75,7 +80,7 @@
 % ---
 
 % -----
-% Personaliza Capa 
+% Personaliza Capa
 % -----
 \renewcommand{\imprimircapa}{%
   \begin{capa}%
@@ -89,12 +94,12 @@
     	% Autor
 	    {\ABNTEXchapterfont\Large\imprimirautor}
 	    \vspace*{\fill}
-	    
+
 	    % Título
     	{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
 	    \vspace*{\fill}
 	    \vspace*{\fill}
-	    
+
 	    % Local e data
 	    {\large\imprimirlocal}
 	    \par
@@ -113,16 +118,16 @@
 \makeatletter
 \renewcommand{\folhaderostocontent}{
 	\begin{center}
-		
+
 		% Autor
 		{\ABNTEXchapterfont\Large\imprimirautor}
 		\vspace*{\fill}
 		\vspace*{\fill}
-		
+
 		% Título
 		{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
 		\vspace*{\fill}
-		
+
 		% Preâmbulo
 		\abntex@ifnotempty{\imprimirpreambulo}{%
 			\hspace{.45\textwidth}
@@ -132,26 +137,26 @@
 				\par
 				\vspace*{1cm}
 				{\normalsize\imprimirareaRotulo~\imprimirarea}
-				
+
 			\end{minipage}%
 			\vspace*{\fill}
 		}%
-		
+
 		% Orientador
 		{\large\imprimirorientadorRotulo~\imprimirorientador}
 		\par
-		
+
 		% Coorientador (se houver)
 		\abntex@ifnotempty{\imprimircoorientador}{%
 			{\large\imprimircoorientadorRotulo~\imprimircoorientador}%
 		}%
 		\vspace*{\fill}
-	
+
 	    % Local e data
 	    {\large\imprimirlocal}
 	    \par
 	    {\large\imprimirdata}
-	
+
 	\end{center}
 }
 \makeatother
@@ -174,7 +179,9 @@
     \prebibhook
 }
 
-
+% -----
+% Reinicia a numeração das notas de rodapé para a parte pós-textual
+% -----
 \renewcommand{\postextual}{%
 	\setcounter{footnote}{0}
 }
